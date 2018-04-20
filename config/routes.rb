@@ -16,6 +16,14 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :competitions do
+    resources :dogs do
+      get 'place/:place', to: 'competitions#place'
+      get 'up', to: 'competitions#up'
+      get 'down', to: 'competitions#down'
+    end
+  end
+  
   resources :dogs
   resources :owners
 end

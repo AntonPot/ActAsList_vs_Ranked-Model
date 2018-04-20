@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180420122334) do
+ActiveRecord::Schema.define(version: 20180420154034) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,6 +18,24 @@ ActiveRecord::Schema.define(version: 20180420122334) do
   create_table "breeds", force: :cascade do |t|
     t.string "breed"
     t.integer "position"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "competition_results", force: :cascade do |t|
+    t.integer "place"
+    t.bigint "dog_id"
+    t.bigint "competition_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["competition_id"], name: "index_competition_results_on_competition_id"
+    t.index ["dog_id"], name: "index_competition_results_on_dog_id"
+  end
+
+  create_table "competitions", force: :cascade do |t|
+    t.string "name"
+    t.string "location"
+    t.boolean "respected"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
