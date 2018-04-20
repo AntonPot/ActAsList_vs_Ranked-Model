@@ -40,12 +40,17 @@ class CompetitionsController < ApplicationController
   end
 
   def place
-    result.update!(place: :down)
+    result.update!(place: params[:place])
     render json: @competition
   end
 
   def up
     result.update!(place: :up)
+    render json: @competition
+  end
+  
+  def down
+    result.update!(place: :down)
     render json: @competition
   end
   
