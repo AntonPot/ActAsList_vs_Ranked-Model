@@ -1,5 +1,5 @@
 class ResultsSerializer < ActiveModel::Serializer
-  attributes :place
+  attributes :place, :position
   attribute :dog_name do
     object.dog.name
   end

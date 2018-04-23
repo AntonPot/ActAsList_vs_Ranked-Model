@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180420154034) do
+ActiveRecord::Schema.define(version: 20180423080912) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20180420154034) do
     t.bigint "competition_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "position"
     t.index ["competition_id"], name: "index_competition_results_on_competition_id"
     t.index ["dog_id"], name: "index_competition_results_on_dog_id"
   end
