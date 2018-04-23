@@ -1,13 +1,17 @@
 # [ActAsList](https://github.com/swanandp/acts_as_list) vs. [Ranked-Model](https://github.com/mixonic/ranked-model)
 
-This is sample API to compare the two gems.
+This is sample API to compare the two gems with rails.
 Both offer an ordering support, but since **Ranked-Model** isn't supported regularly anymore, **ActAsList** seems like a good alternative. 
 
 ## Content
 You'll find some _Dogs_, _Owners_, _Breeds_ and _Competitions_ in your data base if you run your seeds.
 
 ```bash
+>> git clone https://github.com/AntonPot/ActAsList_vs_Ranked-Model.git
+>> cd ActAsList_vs_Ranked-Model/
+>> brew services start postgresql
 >> rake db:create db:migrate db:seed
+>> rails s
 ```
 
 ### ActAsList tryout
